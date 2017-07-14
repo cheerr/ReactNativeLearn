@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "25.0.3"
+  defaultConfig {
+    applicationId "org.sangguo.newrnproject"
+    minSdkVersion 16
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0"
+
+    ndk {
+      abiFilters "armeabi-v7a", "x86"
+    }
+
+    packagingOptions {
+      exclude "lib/arm64-v8a/libgnustl_shared.so"
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+    compile project(':react-native-linear-gradient')
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:23.0.1'
+  compile "com.facebook.react:react-native:+"
+  // 如果只需要支持WebP格式而不需要动图
+  compile 'com.facebook.fresco:webpsupport:1.0.1'
+}
