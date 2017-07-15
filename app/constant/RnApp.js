@@ -4,10 +4,10 @@
  */
 
 const RnApp = {
-    DEBUG: true,
-    MainPage: "Hello",
-    HttpTag: "HttpTag",
-    TAG: "TAG"
-};
+  DEBUG: true,
+  MainPage: 'HelloScreen',
+  HttpTag: 'HttpTag',
+  TAG: 'TAG'
+}
 
-export default RnApp;
+export default RnApp

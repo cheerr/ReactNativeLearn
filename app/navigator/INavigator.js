@@ -3,25 +3,26 @@
  *
  * 导航栏路由页面
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-import {StackNavigator} from "react-navigation";
-import NavigatorScreens from "./NavigatorScreens";
-
+import { StackNavigator } from 'react-navigation'
+import NavigatorScreens from './NavigatorScreens'
+import RnApp from '../constant/RnApp'
 
 class INavigator extends Component {
 
-    render() {
+  render () {
 
-        //NavigatorScreens注册所有页面
-        let NavigatorApp = StackNavigator(NavigatorScreens, {
-            initialRouteName: this.props.routeName //initialRouteName存放初次跳转的页面名字
-        });
+    const routeName = NavigatorScreens.hasOwnProperty(this.props.routeName) ? this.props.routeName : RnApp.MainPage
 
-        //Navigator的参数需要传递在screenProps中
-        return <NavigatorApp screenProps={this.props}/>
-    }
+    //NavigatorScreens注册所有页面
+    let NavigatorApp = StackNavigator(NavigatorScreens, {
+      initialRouteName: routeName //initialRouteName存放初次跳转的页面名字
+    })
+
+    //Navigator的参数需要传递在screenProps中
+    return <NavigatorApp screenProps={this.props}/>
+  }
 }
 
-
-export default INavigator;
+export default INavigator
