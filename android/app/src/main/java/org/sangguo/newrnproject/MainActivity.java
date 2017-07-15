@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void toMain(View view) {
     startActivity(
-        ReactMainActivity.getReactIntent(this, "Test", "自定义" + new Random().nextInt(100)));
+        ReactMainActivity.getReactIntent(this, "TestScreen", "自定义" + new Random().nextInt(100)));
   }
 
   private static final int OVERLAY_PERMISSION_REQ_CODE = 0x600;

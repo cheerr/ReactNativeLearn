@@ -5,15 +5,15 @@
 
 import React from 'react'
 
-import Hello from "../modules/Hello";
-import Test from "../modules/Test";
+import HelloScreen from '../modules/HelloScreen'
+import TestScreen from '../modules/TestScreen'
 
 const NavigatorScreens = {
-    Hello: {screen: Hello},
-    Test: {
-        screen: Test,
-        navigationOptions: {}  //可以定制navigationOptions，但是会被页面内的status navigationOptions覆盖
-    }
-};
+  HelloScreen: {screen: HelloScreen},
+  TestScreen: {
+    screen: TestScreen,
+    navigationOptions: {}  //可以定制navigationOptions，但是会被页面内的status navigationOptions覆盖
+  }
+}
 
-export default NavigatorScreens;
+export default NavigatorScreens
